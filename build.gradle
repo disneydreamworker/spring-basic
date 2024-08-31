@@ -26,6 +26,28 @@ dependencies {
 
   testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
   testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+
+  implementation 'org.springframework:spring-core:5.3.27'
+  implementation 'org.springframework:spring-context:5.3.27'
+  implementation 'org.springframework:spring-webmvc:5.3.27'
+  implementation 'org.springframework:spring-test:5.3.27'
+
+  compileOnly 'org.projectlombok:lombok:1.18.30'
+  annotationProcessor 'org.projectlombok:lombok:1.18.30'
+  testCompileOnly 'org.projectlombok:lombok:1.18.30'
+  testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
+
+  implementation 'org.apache.logging.log4j:log4j-api:2.22.1'
+  implementation 'org.apache.logging.log4j:log4j-core:2.22.1'
+  implementation 'org.apache.logging.log4j:log4j-slf4j-impl:2.22.1'
+
+
+  // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+  implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.21'
+
+  // https://mvnrepository.com/artifact/com.zaxxer/HikariCP
+  implementation group: 'com.zaxxer', name: 'HikariCP', version: '5.0.1'
+
 }
 
 test {
