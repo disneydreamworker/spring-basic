@@ -24,6 +24,8 @@ tasks.withType(JavaCompile) {
 dependencies {
   compileOnly('javax.servlet:javax.servlet-api:4.0.1')
 
+  //테스트 환경에서 로그 라이브러리를 사용하기 위해 필요한 라이브러리
+  testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
   testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
   testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 
@@ -48,6 +50,10 @@ dependencies {
   // https://mvnrepository.com/artifact/com.zaxxer/HikariCP
   implementation group: 'com.zaxxer', name: 'HikariCP', version: '5.0.1'
 
+  implementation 'jstl:jstl:1.2'
+
+  // https://mvnrepository.com/artifact/org.modelmapper/modelmapper
+  implementation group: 'org.modelmapper', name: 'modelmapper', version: '3.1.1'
 }
 
 test {

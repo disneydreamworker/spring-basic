@@ -1,7 +1,6 @@
 package com.ssg.springex.todo.dao;
 
 import com.ssg.springex.todo.domain.TodoVO;
-import com.ssg.springex.todo.dto.TodoDTO;
 import lombok.Cleanup;
 
 import java.sql.Connection;
@@ -11,7 +10,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 public class TodoDao {
-    public void insert(TodoDTO vo) throws Exception {
+    public void insert(TodoVO vo) throws Exception {
         String sql = "insert into tbl_todo (tno,title,dueDate,finished) values(null,?,?,?)";
 
         @Cleanup Connection connection = ConnectionUtill.INSTANCE.getConnection();
@@ -32,7 +31,11 @@ public class TodoDao {
 
         List<TodoVO> todoVOS = new ArrayList<>();
         while(rs.next()) {
-            TodoVO vo = TodoVO.builder().tno(rs.getLong("tno")).title(rs.getString("title")).dueDate(rs.getDate("dueDate").toLocalDate()).finished(rs.getBoolean("finished")).build();
+            TodoVO vo = TodoVO.builder()
+                    .tno(rs.getLong("tno"))
+                    .title(rs.getString("title"))
+                    .dueDate(rs.getDate("dueDate").toLocalDate())
+                    .finished(rs.getBoolean("finished")).build();
             todoVOS.add(vo);
         }
         return todoVOS;

@@ -26,6 +26,5 @@
         <li>${dto}</li>
     </c:forEach>
 </ul>
-
 </body>
 </html>

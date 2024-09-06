@@ -1,14 +1,15 @@
 package com.ssg.springex.todo.domain;
 
-import lombok.Builder;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 
-@Data
+
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@ToString
 public class TodoVO {
     private Long tno;
     private String title;

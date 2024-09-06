@@ -1,6 +1,7 @@
-package com.ssg.springex.todo.service;
+package com.ssg.springex.todo.controller;
 
 import com.ssg.springex.todo.dto.TodoDTO;
+import com.ssg.springex.todo.service.TodoService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,7 +16,7 @@ public class TodoReadController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("todo/read......실행");
         Long tno = Long.parseLong(req.getParameter("tno"));
-        TodoDTO dto = TodoService.INSTANCE.get(tno);
+        TodoDTO dto = null;
         req.setAttribute("dto", dto);
         req.getRequestDispatcher("/todo/read.jsp").forward(req,resp);
     }
