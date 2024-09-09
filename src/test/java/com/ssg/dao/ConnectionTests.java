@@ -1,4 +1,4 @@
-package dao;
+package com.ssg.dao;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
