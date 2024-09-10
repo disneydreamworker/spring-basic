@@ -1,6 +1,6 @@
 package com.ssg.springex.web2.filter;
 
-import jakarta.servlet.annotation.WebFilter;
+import javax.servlet.annotation.WebFilter;
 import lombok.extern.log4j.Log4j2;
 
 import javax.servlet.*;
