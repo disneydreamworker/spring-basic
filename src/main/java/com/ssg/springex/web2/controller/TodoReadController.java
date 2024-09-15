@@ -30,7 +30,7 @@ public class TodoReadController extends HttpServlet {
             //쿠키 찾기
             Cookie viewTodoCookie = findCookie(req.getCookies(), "viewTodos");
             String todoListStr = viewTodoCookie.getValue();
-            boolean exist = true;
+            boolean exist = false;
 
             if (todoListStr != null && todoListStr.indexOf(tno + "-") >= 0) {
                 exist = true;
